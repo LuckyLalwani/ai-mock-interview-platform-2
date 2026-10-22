@@ -1,0 +1,11 @@
+.gcloudignore
+.git
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+benchmark_results.txt
+test_face.jpg
+test_two_faces.jpg
+test_voice.wav

@@ -1,0 +1,28 @@
+# Core Web API
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+python-multipart>=0.0.9
+pydantic>=2.6.0
+requests>=2.31.0
+
+# Numerical & Image Processing
+numpy>=1.24.0,<3.0.0
+pillow>=10.2.0
+opencv-python-headless>=4.8.0
+
+# Deep Learning Frameworks
+# Note: In Docker/GCP, CPU wheels are recommended: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.38.0
+timm>=1.0.0
+facenet-pytorch>=2.5.3
+
+# Audio & Speech Processing
+librosa>=0.10.1
+soundfile>=0.12.1
+imageio-ffmpeg>=0.4.9
+
+# Utilities
+truststore>=0.8.0
+python-dotenv>=1.0.0

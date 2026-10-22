@@ -1,0 +1,19 @@
+# Python virtual environments & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Local env & logs
+.env
+.env.*
+*.log
+
+# Test media / scratch files
+benchmark_results.txt
+test_face.jpg
+test_two_faces.jpg
+test_voice.wav

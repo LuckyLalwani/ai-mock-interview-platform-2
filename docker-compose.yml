@@ -1,0 +1,26 @@
+services:
+  ml-service:
+    build:
+      context: ./ml-service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8080"
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - GROQ_API_KEY=${GROQ_API_KEY:-}
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL:-https://eeycrjqukhnzjgnlmavg.supabase.co}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVleWNyanF1a2huempnbmxtYXZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyNzAzNDEsImV4cCI6MjEwMzg0NjM0MX0.Ai3W8t-80COj27p2Ax4PdtN_0PJgA4-N0h5ZjA3nOkY}
+        VITE_ML_SERVICE_URL: ${VITE_ML_SERVICE_URL:-http://localhost:8000}
+    ports:
+      - "3000:8080"
+    depends_on:
+      - ml-service
+    restart: unless-stopped

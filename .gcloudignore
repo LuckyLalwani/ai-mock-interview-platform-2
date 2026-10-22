@@ -1,0 +1,12 @@
+.gcloudignore
+.git
+.github
+node_modules/
+dist/
+.venv/
+venv/
+__pycache__/
+*.log
+.bolt/
+.vscode/
+.idea/
